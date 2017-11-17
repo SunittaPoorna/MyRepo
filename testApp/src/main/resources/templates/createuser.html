@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Spring Boot  Thymeleaf </title>
+       </head>
+	<body>
+	<h2></h2>
+	    <h1>Create User</h1>
+	    <form action="#" th:action="@{/user/createuser}" th:object="${user}" method="POST">
+	      
+	    	<label>User ID</label>	    	   
+	    	       <input type="text" th:field="*{userId}" />    	   
+	    	  
+	    	<label>User Name</label>	    	   
+	    	      <input type="text" th:field="*{userName}" />
+	    	   
+	    	<label>Gender</label>
+	    	 	       <input type="radio" th:field="*{gender}" value="Male"/><label>Male</label>
+	    	       <input type="radio" th:field="*{gender}" value="Female"/><label>Female</label>
+	    	       
+	    	  
+	    	<label>Profile</label>  	    	
+	    	       <select th:field="*{profile}">
+	    	           <option th:each="profile : ${allProfiles}" th:value="${profile}" th:text="${profile}">Profile</option>
+	    	       </select>
+	    	   
+	              <input type="submit" th:value="Submit"/> 
+	              <input type="reset" th:value="Reset"/>
+	           
+	    </form>
+	</body>
+</html> 
