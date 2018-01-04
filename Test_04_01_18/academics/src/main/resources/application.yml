@@ -1,0 +1,23 @@
+server:
+  port: 8080    #port number
+ 
+eureka:
+   client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+    registerWithEureka: true
+    fetchRegistry: true
+ 
+spring:
+  application:
+    name: academics   #service name
+ 
+logging:
+  level:
+    com.poorna.rk.academic: DEBUG
+    
+ 
